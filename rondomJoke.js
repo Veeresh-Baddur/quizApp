@@ -5,11 +5,8 @@ let viewBtn = document.querySelector(".view")
 function view(){
   fetch('https://official-joke-api.appspot.com/jokes/random')
   .then(response => response.json())
-  .then(data => {jokebox.innerText = `${data.setup}\n\n"${data.punchline}"`
-  })
-  .catch(error =>{
-    console.error("error in fecthing joke",error)
-  })
+  .then(data => jokebox.innerText = `${data.setup}\n\n"${data.punchline}"`)
+  .catch(error => console.error("error in fecthing joke",error) )
 }
 window.onload = view
 
